@@ -1,0 +1,15 @@
+<?php
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+echo json_encode([
+    "keys" => [
+        [
+            "kty" => "RSA",
+            "use" => "sig",
+            "alg" => "RS256",
+            "kid" => "sample-key-1",
+            "n"   => "0Cai-Ru4S50RD-9NOsrbv_EZ4cxot-jgWK2esK5_m9StiDpu77nkNgLeM_8Zw_1mg6lLEZ3i6u0J44Wana_-BsjMLI8ZJyW9zXI9xyeELzG-209kqEPKj-HKSXWW2d9dtyjJAb2AEl8psC1Hu3l-lsoTt2Xmp98l4T1e6qi6KdBCzTuc6w_LVZVn5Ropmcfin1wq8ve35z_ztppg42-2MDNUl1ccLNf9GXv5pHrAu47krmM4p-NsnMOxBaRpvTPXbqePi2zwXImMBQFhfFZPUI9eJrqaV4t_oo9D3YsO-l1WTTe8gPeghNurUZS7AKyrUkDuTU1RRsJEkGy39kVBWQ",
+            "e"   => "AQAB"
+        ]
+    ]
+], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);

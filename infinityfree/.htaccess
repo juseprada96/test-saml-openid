@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine On
+
+# Serve jwks without .php extension
+RewriteRule ^jwks$ jwks.php [L]
+
+# Serve .well-known/openid-configuration without extension
+RewriteRule ^\.well-known/openid-configuration$ .well-known/openid-configuration.php [L]

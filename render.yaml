@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sample-openid
+    env: java
+    buildCommand: mvn clean package -DskipTests -s settings-central.xml
+    startCommand: java -jar target/sample-openid-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: ISSUER_URL
+        value: http://test-saml-openid.onrender.com
+      - key: TOKEN_USERNAME
+        value: admin
+      - key: TOKEN_PASSWORD
+        sync: false   # Set this as a secret in the Render dashboard
+    plan: free

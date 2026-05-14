@@ -1,0 +1,14 @@
+target/
+*.jar
+*.class
+.DS_Store
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# RSA private key — keep local only, never commit
+src/main/resources/keys/private.pem
