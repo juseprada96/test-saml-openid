@@ -1,6 +1,6 @@
 {
   "issuer": "http://jusepradadev.com/",
-  "jwks_uri": "http://jusepradadev.com/jwks",
+  "jwks_uri": "http://jusepradadev.com/protocol/openid-connect/certs",
   "token_endpoint": "http://jusepradadev.com/token/generate",
   "authorization_endpoint": "http://jusepradadev.com/authorize",
   "userinfo_endpoint": "http://jusepradadev.com/userinfo",

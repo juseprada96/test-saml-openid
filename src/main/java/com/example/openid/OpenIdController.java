@@ -30,7 +30,7 @@ public class OpenIdController {
 
         Map<String, Object> doc = new LinkedHashMap<>();
         doc.put("issuer",                                iss);
-        doc.put("jwks_uri",                              base + "/jwks");
+        doc.put("jwks_uri",                              base + "/protocol/openid-connect/certs");
         doc.put("token_endpoint",                        base + "/token/generate");
         doc.put("authorization_endpoint",                base + "/authorize");
         doc.put("userinfo_endpoint",                     base + "/userinfo");
@@ -51,10 +51,16 @@ public class OpenIdController {
         return doc;
     }
 
-    /** JWKS endpoint — returns the public key used to verify tokens */
+    /** Legacy JWKS endpoint — returns the public key used to verify tokens */
     @GetMapping(value = "/jwks", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> jwks() {
         return rsaKeyService.toJwkSet();
+    }
+
+    /** Keycloak-style certs endpoint — returns the public key with x5c certificate chain */
+    @GetMapping(value = "/protocol/openid-connect/certs", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> certs() {
+        return rsaKeyService.toJwkSetWithCerts();
     }
 
     /**
